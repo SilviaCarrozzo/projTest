@@ -1,8 +1,11 @@
 
 <div class="card-body jumbotron center center">
   <div>
-    <img [src]="imageSource + indexFact" [title]="'The' + indexFact +'° cat'"
+    <img id="catImg" [src]="imageSource + indexFact" [title]="'The' + indexFact +'° cat'"
         [alt]="'The' + indexFact +'° cat'"/>
   </div>
- <textarea id="fact" name="fact" rows="4" cols="50">{{fact}}</textarea>
+ <textarea id="fact" name="fact" rows="6" cols="60">{{fact.fact}}</textarea>
+ <p>{{fact.length}}</p>
+
+ <button class="btn btn-warning" [routerLink]="['/home']">Indietro</button>
 </div>

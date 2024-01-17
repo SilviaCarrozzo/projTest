@@ -17,6 +17,7 @@
           <img
             [src]="imageSource + i"
             [alt]="'The' + i +'° cat'"
+            [title]="'The' + i +'° cat'"
             class="me-2"
             style="width: 50px"
           />
@@ -24,7 +25,7 @@
         <td class="text-truncate"> {{fact.fact}}</td>
         <td>{{fact.length}}</td>
         <td>
-          <button [routerLink]="['/details/', i]" [relativeTo]="fact">details</button>
+          <button [routerLink]="['/details/', i]" [state]="fact">details</button>
         </td>
       </tr>
   </tbody>

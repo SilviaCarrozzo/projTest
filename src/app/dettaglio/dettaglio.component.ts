@@ -11,7 +11,6 @@ import { environment } from 'src/environments/environment.development';
 export class DettaglioComponent {
   drink: any = {};
   fact: any;
-  @Input() fact1: any;
   indexFact: string = '';
   imageSource = environment.imageSource;
 
@@ -20,13 +19,14 @@ export class DettaglioComponent {
   ngOnInit(): void {
     const queryString = window.location.pathname;
     this.indexFact = queryString.split('/')[2];
-    console.log("indexFact: ", this.indexFact);
-    //if(this.indexFact) {}
-    console.log("fact1 input: ", this.fact1);
-    this.route.data.subscribe(
+    this.fact = history.state;
+  }
+}
+
+/**
+ * this.route.data.subscribe(
       ({fact}) => {
         console.log("fact: ", fact);
         this.fact = fact;
       });
-  }
-}
+ */
