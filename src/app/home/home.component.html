@@ -1,0 +1,34 @@
+<h1 class="title">Cat news</h1>
+
+<nz-table #fixedTable [nzData]="catsFacts" nzTableLayout="fixed">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th nzEllipsis>Cat Fact</th>
+      <th>Length</th>
+      <th>Dettaglio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of fixedTable.data; let i = index">
+      <td>{{ i }}</td>
+      <td nzEllipsis>{{ data.fact }}</td>
+      <td nzEllipsis>{{ data.length }}</td>
+      <td>
+        <button [routerLink]="['/dettaglio/' + i]">dettaglio</button>
+    </td>
+    </tr>
+  </tbody>
+</nz-table>
+
+
+<!--
+  <table>
+  <tr *ngFor="let fact of catsFacts; let i = index">
+    <td>{{fact.fact}}</td><td>{{fact.length}}</td>
+    <td>
+        <button [routerLink]="['/dettaglio/' + i]">dettaglio</button>
+    </td>
+  </tr>
+</table>
+-->
