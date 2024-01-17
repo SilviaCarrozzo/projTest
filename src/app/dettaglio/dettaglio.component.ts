@@ -1,20 +1,32 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-dettaglio',
+  styleUrls: ['./dettaglio.component.scss'],
   templateUrl: './dettaglio.component.html',
 })
 export class DettaglioComponent {
   drink: any = {};
+  fact: any;
+  @Input() fact1: any;
+  indexFact: string = '';
+  imageSource = environment.imageSource;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    const queryString = window.location.pathname;
+    this.indexFact = queryString.split('/')[2];
+    console.log("indexFact: ", this.indexFact);
+    //if(this.indexFact) {}
+    console.log("fact1 input: ", this.fact1);
     this.route.data.subscribe(
-      ({drink}) => {
-        this.drink = drink.drinks[0];
+      ({fact}) => {
+        console.log("fact: ", fact);
+        this.fact = fact;
       });
   }
 }

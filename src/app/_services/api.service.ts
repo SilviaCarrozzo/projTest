@@ -1,11 +1,12 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { environment } from "src/environments/environment.development";
 
 @Injectable({
   providedIn: 'root'
 })
 export default class ApiService {
-  baseUrl = 'https://catfact.ninja/';
+  baseUrl = environment.backendUrl;
 
   constructor( private http: HttpClient) {}
 
@@ -13,12 +14,8 @@ export default class ApiService {
     return this.http.get( this.baseUrl + 'facts')
   }
 
-  lookupByI(idDrink: string) {
-    return this.http.get( this.baseUrl + '/lookup.php?i=' + idDrink)
-  }
-
-  saveDrink(drink: any) {
-
+  getFact() {
+    return this.http.get( this.baseUrl + 'fact')
   }
 
 }

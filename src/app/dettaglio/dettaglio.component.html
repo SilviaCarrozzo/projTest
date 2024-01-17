@@ -1,8 +1,8 @@
-DETTAGLIO.....
-<h1>Nome drink {{drink.strDrink}}</h1>
 
-
-<ul>
-  <li [routerLink]="['/dettaglio/17195']">Bellini</li>
-  <li [routerLink]="['/dettaglio/15853']">B-52</li>
-</ul>
+<div class="card-body jumbotron center center">
+  <div>
+    <img [src]="imageSource + indexFact" [title]="'The' + indexFact +'° cat'"
+        [alt]="'The' + indexFact +'° cat'"/>
+  </div>
+ <textarea id="fact" name="fact" rows="4" cols="50">{{fact}}</textarea>
+</div>
