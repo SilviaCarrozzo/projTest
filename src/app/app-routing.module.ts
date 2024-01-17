@@ -8,7 +8,7 @@ const routes: Route[] =  [
 //  {path: 'crisis-list', component: CrisisListComponent},
   {path: 'home', component: HomeComponent},
   {
-    path: 'dettaglio/:idFact',
+    path: 'details/:idFact',
     component: DettaglioComponent,
     /*resolve: {
                 'fact': (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) =>
